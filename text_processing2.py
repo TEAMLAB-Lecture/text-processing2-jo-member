@@ -28,10 +28,34 @@ def digits_to_words(input_string):
             >>> tp2.digits_to_words(digits_str2)
             'three one four one five'
     """
-    digit_string = None
-    return digit_string
+    digit_string = ''
+    dic = ['0','1','2','3','4','5','6','7','8','9']
+    for i in input_string:
+        if i in dic:
+            if int(i)==0:
+                digit_string+='zero '
+            elif int(i)==1:
+                digit_string+='one '
+            elif int(i)==2:
+                digit_string+='two '
+            elif int(i)==3:
+                digit_string+='three '
+            elif int(i)==4:
+                digit_string+='four '
+            elif int(i)==5:
+                digit_string+='five '
+            elif int(i)==6:
+                digit_string+='six '
+            elif int(i)==7:
+                digit_string+='seven '
+            elif int(i)==8:
+                digit_string+='eight '
+            elif int(i)==9:
+                digit_string+='nine '
+    return digit_string.rstrip(' ')
 
-
+s = "Zip Code: 19104"
+print(digits_to_words(s))
 """
 컴퓨터 프로그래밍에 많은 명명 규칙이 있지만, 두 규칙이 특히 흔히 쓰입니다. 
 첫번째로는, 변수 이름을 'underscore'로 나눠준다거나, (ex. under_score_variable)
@@ -64,5 +88,9 @@ def to_camel_case(underscore_str):
             >>> tp2.to_camel_case(underscore_str3)
             "alreadyCamel"
     """
-    camelcase_str = None
+    l = underscore_str.lower().split('_')
+    for i in range(1,len(l)):
+        l[i] = l[i].capitalize()
+    camelcase_str = ''.join(l)
     return camelcase_str
+
