@@ -96,7 +96,9 @@ def to_camel_case(underscore_str):
         return ''
     if len(l)==1:
         return l[0]
-    for i in range(1,len(l)):
-        l[i] = l[i].lower().capitalize()
-    camelcase_str = ''.join(l)
-    return camelcase_str
+    else:
+        l[0]=l[0].lower()
+        for i in range(1, len(l)):
+            l[i] = l[i].capitalize()
+        camelcase_str = ''.join(l)
+        return camelcase_str
